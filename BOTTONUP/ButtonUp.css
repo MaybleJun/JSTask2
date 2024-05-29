@@ -1,0 +1,25 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.arrow-up{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
+
+.arrow-up a {
+    width: 50px;
+    height: 50px;
+    background-color: #d154aa;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 50px;
+    border-radius: 50%;
+    transition: 1.5s;
+}
+.arrow-up a:hover {
+    background: #007bff;
+}
