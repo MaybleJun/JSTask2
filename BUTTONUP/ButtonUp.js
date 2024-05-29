@@ -1,9 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
     const arrowUp = document.getElementById('arrow-up');
-
+    const firstTextLine = document.querySelector('#content p.text');
 
     window.addEventListener('scroll', function () {
-        if (window.scrollY > 200) {
+        const rect = firstTextLine.getBoundingClientRect();
+        
+        if (rect.top < 0) {
             arrowUp.style.display = 'block';
         } else {
             arrowUp.style.display = 'none';
