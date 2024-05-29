@@ -1,11 +1,33 @@
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 00;
+    -webkit-tap-highlight-color: transparent;
+}
+
 html {
     scroll-behavior: smooth;
 }
 
-.arrow-up{
+.main__title{
+    text-align: center;
+    margin: 20px;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 150%;
+}
+
+.arrow-up {
     position: fixed;
     bottom: 30px;
     right: 30px;
+    display: none;
 }
 
 .arrow-up a {
@@ -20,6 +42,7 @@ html {
     border-radius: 50%;
     transition: 1.5s;
 }
+
 .arrow-up a:hover {
     background: #007bff;
 }
