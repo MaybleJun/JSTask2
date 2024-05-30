@@ -7,25 +7,27 @@ body, html {
     background-color: #f0f0f0;
 }
 
+.main {
+    display: flex;
+    justify-content: center;
+}
+
 .login-form {
     background-color: white;
     border-radius: 8px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     width: 300px;
-    
 }
 
 .form-group {
-    margin: 0 30px 20px 0;
-    
+    margin: 0 0 20px 0;
 }
 
-label {
+.form-group__label {
     font-size: 14px;
     display: block;
     margin-bottom: 5px;
-    
 }
 
 .error-message, .valid, .invalid {
@@ -33,40 +35,41 @@ label {
     margin-top: 5px;
 }
 
-input[type="text"],
-input[type="password"] {
-    width: 100%;
-    padding: 10px; 
+.form-group__input {
+    min-width: 270px;
+    padding: 10px;
     border-radius: 5px;
     border: 1px solid #dcf02b;
     background: rgb(255, 252, 226);
+    margin-right: 10px;
 }
-
 
 .error-message {
     color: red;
     display: none;
 }
+
 .valid {
     color: green;
 }
+
 .invalid {
     color: red;
 }
-#message {
+
+.form-group__message {
     display: none;
 }
 
-
-button[type="submit"] {
+.login-form__submit {
     background-color: #007bff;
     color: white;
     padding: 10px 20px;
     border-radius: 20px;
     border: none;
-    cursor: pointer; 
+    cursor: pointer;
 }
 
-button[type="submit"]:hover {
+.login-form__submit:hover {
     background-color: #0056b3;
 }

@@ -7,28 +7,28 @@
     <link rel="stylesheet" href="Form.css">
 </head>
 <body>
-    <main>
+    <main class="main">
         <section class="login-form">
-            <h3>Contact Information</h3>
-            <form id="form">
-                <div class="form-group">
-                    <label for="name">FIO:</label>
-                    <input type="text" id="name" name="name" required placeholder="For Example Doe">
-                    <div id="name-error" class="error-message">Use only Latin letters</div>
+            <h3 class="login-form__title">Contact Information</h3>
+            <form id="form" class="login-form__form">
+                <div class="login-form__form-group form-group">
+                    <label for="name" class="form-group__label">FIO:</label>
+                    <input type="text" id="name" name="name" required placeholder="For Example Doe" class="form-group__input">
+                    <div id="name-error" class="form-group__error-message error-message">Use only Latin letters</div>
                 </div>
-                <div class="form-group">
-                    <label for="password">Your password:</label>
-                    <input type="password" id="password" name="password" required  placeholder="Enter  the password">
-                    <div id="message">
-                        <p id="length" class="invalid">Password must contain at least 8 characters</p>
-                        <p id="letter" class="invalid">Password must contain lowercase latin letters</p>
-                        <p id="capital" class="invalid">Password must contain one uppercase latin letter</p>
-                        <p id="number" class="invalid">Password must contain a digit</p>
-                        <p id="special" class="invalid">Password must not contain special characters</p>
+                <div class="login-form__form-group form-group">
+                    <label for="password" class="form-group__label">Your password:</label>
+                    <input type="password" id="password" name="password" required placeholder="Enter  the password" class="form-group__input">
+                    <div id="message" class="form-group__message">
+                        <p id="length" class="form-group__check invalid">Password must contain at least 8 characters</p>
+                        <p id="letter" class="form-group__check invalid">Password must contain lowercase latin letters</p>
+                        <p id="capital" class="form-group__check invalid">Password must contain one uppercase latin letter</p>
+                        <p id="number" class="form-group__check invalid">Password must contain a digit</p>
+                        <p id="special" class="form-group__check invalid">Password must not contain special characters</p>
                     </div>
-                    <div id="password-strength" class="strength-meter"></div>
+                    <div id="password-strength" class="form-group__strength-meter strength-meter"></div>
                 </div>
-                <button type="submit">Continue</button>
+                <button type="submit" class="login-form__submit">Continue</button>
             </form>
         </section>
     </main>
