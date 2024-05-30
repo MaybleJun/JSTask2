@@ -1,5 +1,7 @@
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
@@ -9,47 +11,119 @@ body {
     align-items: center;
     height: 100vh;
     position: relative;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .slider {
     position: relative;
-    max-width: 1750px; /* 500px * 3.5 */
+    width: 100%;
+    max-width: 1120px;
     margin: 0 auto;
     overflow: hidden;
 }
 
 .slides {
+    min-height: 400px;
     display: flex;
     transition: transform 0.5s ease-in-out;
+    margin: 20px 0;
 }
 
 .slide {
-    width: 500px;
+    width: 300px;
     flex-shrink: 0;
+    background-color: white;
+    padding: 25px;
+    margin: 0 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .slide img {
     width: 100%;
+    max-height: 200px;
+    border-radius: 8px 8px 0 0;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.description {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #333;
 }
 
 .buttons {
     display: flex;
     justify-content: flex-end;
     width: 100%;
-    max-width: 1750px; /* 500px * 3.5 */
-    margin-top: 10px;
+    max-width: 1120px;
+    margin-top: 20px;
+    padding-top: 10px;
 }
 
 button {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: blue;
     color: white;
     border: none;
     padding: 10px;
     cursor: pointer;
-    margin-left: 10px;
+    margin: 0 5px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
 
 button:disabled {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: gray;
     cursor: not-allowed;
+}
+
+button:active {
+    background-color: darkblue;
+}
+
+
+@media (max-width: 768px) {
+    .slide {
+        width: 240px;
+        margin: 0 5px;
+    }
+
+    .slide img {
+        max-height: 150px;
+    }
+
+    .description {
+        font-size: 0.9rem;
+    }
+
+    button {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .slide {
+        width: 200px;
+        margin: 0 5px;
+    }
+
+    .slide img {
+        max-height: 120px;
+    }
+
+    .description {
+        font-size: 0.8rem;
+    }
+
+    button {
+        padding: 6px;
+        font-size: 0.8rem;
+    }
 }

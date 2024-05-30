@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const prevButton = document.querySelector('.prev-btn');
     const nextButton = document.querySelector('.next-btn');
     let currentIndex = 0;
-    const PHOTOS_LIMIT = 20;
+    const PHOTOS_LIMIT = 10;
     let totalPhotos = 0;
 
     function fetchPhotos() {
@@ -12,7 +12,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 response.data.forEach(photo => {
                     const slide = document.createElement('div');
                     slide.classList.add('slide');
-                    slide.innerHTML = `<img src="${photo.url}" alt="${photo.title}">`;
+                    slide.innerHTML = `
+                        <img src="${photo.url}" alt="${photo.title}">
+                        <p class="description">${photo.title}</p>
+                    `;
                     slidesContainer.appendChild(slide);
                 });
                 totalPhotos += response.data.length;
@@ -22,13 +25,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function showSlide(index) {
-        const slideWidth = 500;
+        const slideWidth = slidesContainer.children[0].offsetWidth;
         slidesContainer.style.transform = `translateX(-${index * slideWidth}px)`;
     }
 
     function updateButtons() {
         prevButton.disabled = currentIndex === 0;
-        nextButton.disabled = currentIndex >= totalPhotos - Math.ceil(3.5);
+        nextButton.disabled = currentIndex === totalPhotos - 2;
     }
 
     prevButton.addEventListener('click', () => {
@@ -40,11 +43,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     nextButton.addEventListener('click', () => {
-        if (currentIndex < totalPhotos - Math.ceil(3.5)) {
+        if (currentIndex < totalPhotos - 1) {
             currentIndex++;
             showSlide(currentIndex);
             updateButtons();
-            if (currentIndex >= slidesContainer.children.length - Math.ceil(3.5) && totalPhotos < PHOTOS_LIMIT) {
+            if (currentIndex >= slidesContainer.children.length - 1 && totalPhotos < PHOTOS_LIMIT) {
                 fetchPhotos();
             }
         }
