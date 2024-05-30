@@ -4,19 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FORM</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/GridFlex.css">
+    <link rel="stylesheet" href="Form.css">
 </head>
 <body>
-    <header>
-        <ul class="header-nav__list">
-            <li class="header-nav__link"><a href="ButtonUp.html">BUTTON UP</a></li>
-            <li class="header-nav__link"><a href="Tooltip.html">TOOLTIP</a></li>
-            <li class="header-nav__link"><a href="GridFlex.html">GRID VS FLEX</a></li>
-            <li class="header-nav__link"><a href="BemSCSS.html">BEM/SCSS</a></li>
-        </ul>
-    </header>
-<main>
-   
-</main>
+    <main>
+        <section class="login-form">
+            <h3>Contact Information</h3>
+            <form id="form">
+                <div class="form-group">
+                    <label for="name">FIO:</label>
+                    <input type="text" id="name" name="name" required placeholder="For Exampl Doe">
+                    <div id="name-error" class="error-message">Use only Latin letters</div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Your password:</label>
+                    <input type="password" id="password" name="password" required  placeholder="Enter  the password">
+                    <div id="message">
+                        <p id="length" class="invalid">Password must contain at least 8 characters</p>
+                        <p id="letter" class="invalid">Password must contain lowercase latin letters</p>
+                        <p id="capital" class="invalid">Password must contain one uppercase latin letter</p>
+                        <p id="number" class="invalid">Password must contain a digit</p>
+                        <p id="special" class="invalid">Password must not contain special characters</p>
+                    </div>
+                    <div id="password-strength" class="strength-meter"></div>
+                </div>
+                <button type="submit">Continue</button>
+            </form>
+        </section>
+    </main>
+    <script src="Form.js"></script>
 </body>
+</html>
