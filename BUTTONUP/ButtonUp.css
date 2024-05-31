@@ -15,7 +15,7 @@ html {
     scroll-behavior: smooth;
 }
 
-.main__title{
+.main__title {
     text-align: center;
     margin: 20px;
     font-size: 32px;
@@ -28,9 +28,14 @@ html {
     bottom: 30px;
     right: 30px;
     display: none;
+
 }
 
-.arrow-up a {
+.arrow-up svg:hover {
+    background-color: #007bff;
+}
+
+.arrow-up svg {
     width: 50px;
     height: 50px;
     background-color: #d154aa;
@@ -38,11 +43,9 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 10px;
     line-height: 50px;
     border-radius: 50%;
     transition: 1.5s;
-}
-
-.arrow-up a:hover {
-    background: #007bff;
+    
 }

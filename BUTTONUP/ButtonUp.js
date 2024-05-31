@@ -5,15 +5,11 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('scroll', function () {
         const rect = firstTextLine.getBoundingClientRect();
         
-        if (rect.top < 0) {
-            arrowUp.style.display = 'block';
-        } else {
-            arrowUp.style.display = 'none';
-        }
-    });
+       rect.top < 0 ? arrowUp.style.display = 'block': arrowUp.style.display = 'none';
 
-    arrowUp.addEventListener('click', function (e) {
-        e.preventDefault();
+    });
+     
+    arrowUp.addEventListener('click', function () {
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
